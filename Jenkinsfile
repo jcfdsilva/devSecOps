@@ -5,9 +5,9 @@ pipeline {
   }
   environment {
     HEROKU_API_KEY = credentials('heroku-api-key')
-    IMAGE_NAME = 'darinpope/jenkins-example-react'
+    IMAGE_NAME = 'jcfdsilva/devSecOps'
     IMAGE_TAG = 'latest'
-    APP_NAME = 'jenkins-example-react'
+    APP_NAME = 'react-devesecops-test'
   }
   stages {
     stage('Build') {

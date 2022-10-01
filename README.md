@@ -51,6 +51,10 @@ On jenkins create a new job on Dashboard:
 - click on new item
 - give it a name
 - choose pipeline 
-- click create
-
+- click ok
+- On pipeline choose definition: Pipeline script from SCM
+- Choose git as SCM
+- paste the Git repository URL
+- verify the branch name nad the Script Path
+- click save and build now
 
