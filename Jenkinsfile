@@ -5,7 +5,7 @@ pipeline {
   }
   environment {
     HEROKU_API_KEY = credentials('heroku-api-key')
-    IMAGE_NAME = 'jcfdsilva/devSecOps'
+    IMAGE_NAME = 'jcfdsilva/devsecops'
     IMAGE_TAG = 'latest'
     APP_NAME = 'react-devesecops-test'
   }
