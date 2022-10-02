@@ -4,14 +4,14 @@ WORKDIR /build
 
 COPY package.json package.json
 #COPY package-lock.json package-lock.json
-RUN npm ci 
+RUN npm i 
 #npm ci = npm install for continuous integration systems
 
 COPY public/ public
 COPY src/ src
 RUN npm run build
 
-#from our buid stage copx in an apache alpine container to deploy in heroku
+#from our buid stage copy in an apache alpine container to deploy in heroku
 FROM httpd:alpine
 WORKDIR /usr/local/apache2/htdocs
 COPY --from=build /build/build/ .
