@@ -28,10 +28,10 @@ pipeline {
     }
     stage('Release the image') {
       steps {
-        // sh "sudo heroku git:remote web --app=${APP_NAME}"
-        sh "git add ."
-        sh "git commit -am 'jenkins push'"
-        sh "git push heroku master"
+        sh "sudo heroku container:release web --app=${APP_NAME}"
+        // sh "git add ."
+        // sh "git commit -am 'jenkins push'"
+        // sh "git push heroku master"
       }
     }
   }
