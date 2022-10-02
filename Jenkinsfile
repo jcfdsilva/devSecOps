@@ -23,8 +23,8 @@ pipeline {
     stage('Push to Heroku registry') {
       steps {
         sh '''
-          docker tag $IMAGE_NAME:$IMAGE_TAG registry.heroku.com/$APP_NAME/web
-          docker push registry.heroku.com/$APP_NAME/web
+          sudo docker tag $IMAGE_NAME:$IMAGE_TAG registry.heroku.com/$APP_NAME/web
+          sudo docker push registry.heroku.com/$APP_NAME/web
         '''
       }
     }
