@@ -33,6 +33,9 @@ access localhost:8080
 $ sudo apt-get install docker-compose
 ```
 
+## install heroku cli
+Read information on how to install heroku LCI on Debian here:
+https://devcenter.heroku.com/articles/heroku-cli#install-with-ubuntu-debian-apt-get
 
 # Create project (optional)
 To create a project from start run:
