@@ -22,17 +22,13 @@ pipeline {
     }
     stage('Push to Heroku registry') {
       steps {
-        sh '''
-          sudo docker tag $IMAGE_NAME:$IMAGE_TAG registry.heroku.com/$APP_NAME/web
-          sudo docker push registry.heroku.com/$APP_NAME/web
-        '''
+        sh "sudo docker tag ${IMAGE_NAME}:${IMAGE_TAG} registry.heroku.com/${APP_NAME}/web"
+        sh "sudo docker push registry.heroku.com/${APP_NAME}/web"
       }
     }
     stage('Release the image') {
       steps {
-        sh '''
-          heroku container:release web --app=$APP_NAME
-        '''
+        sh "sudo heroku container:release web --app=${APP_NAME}"
       }
     }
   }
