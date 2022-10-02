@@ -5,17 +5,39 @@ We will use the following
 - Jenkins (for orchestrization)
 - Heroku (for deployement)
 
-# Installation
-To create a REACT app wou need node and nom, you also need Jenkins to create jobs and Docker for contenarisation.
-You might need to install WSL2 and enable virtualization on your BIOS to use Docker.
-- install npm and node
-- install Docker
-- install Jenkins (as a docker container)
+# New Debian machine as server (optional)
+add your user as a sudoer and configure the system to not ask for password for the sudo group
+```sh
+$ su -
+$ adduser {myuser} sudo
+$ sudo visudo
+```
+add this line to the end of the file
+```sh
+$ %sudo  ALL=(ALL) NOPASSWD: ALL
+```
+
+### install jenkins
+```sh
+$ sudo apt install nodejs npm -y
+$ sudo apt-get install default-jdk
+$ sudo apt-get install curl
+...follow instruction in jenkins website for installation
+$ sudo systemctl restart jenkins
+$ sudo adduser jenkins sudo
+```
+access localhost:8080
+
+### install docker
+```sh
+$ sudo apt-get install docker-compose
+```
+
 
 # Create project (optional)
 To create a project from start run:
 ```sh
-npx create-react-app devsecops
+$ npx create-react-app devsecops
 ```
 create repository on github and link to the react app (github provides clear steps for this)
 copy Dockerfile and Jenkinsfile from this repository 
@@ -23,7 +45,7 @@ copy Dockerfile and Jenkinsfile from this repository
 # Clone this project
 If you didn't create a new project you can clone this one
 ```sh 
-git clone https://github.com/jcfdsilva/devSecOps.git
+$ git clone https://github.com/jcfdsilva/devSecOps.git
 ```
 
 # Create heroku app
