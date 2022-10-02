@@ -3,7 +3,7 @@ FROM node:16.17.1-buster AS build
 WORKDIR /build
 
 COPY package.json package.json
-COPY package-lock.json package-lock.json
+#COPY package-lock.json package-lock.json
 RUN npm ci 
 #npm ci = npm install for continuous integration systems
 
